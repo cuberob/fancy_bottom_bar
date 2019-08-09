@@ -10,7 +10,11 @@ class FancyTabItem {
 
   @override
   bool operator ==(Object other) =>
-      identical(this, other) || other is FancyTabItem && runtimeType == other.runtimeType && title == other.title && icon == other.icon;
+      identical(this, other) ||
+      other is FancyTabItem &&
+          runtimeType == other.runtimeType &&
+          title == other.title &&
+          icon == other.icon;
 
   @override
   int get hashCode => title.hashCode ^ icon.hashCode;

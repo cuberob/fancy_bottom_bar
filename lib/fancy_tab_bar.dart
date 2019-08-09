@@ -34,7 +34,7 @@ class FancyTabBar extends StatelessWidget {
       elevation: 8,
       color: bgColor ?? Theme.of(context).bottomAppBarColor,
       child: SafeArea(
-        child: Container(
+        child: SizedBox(
           child: Row(
             children: items
                 .asMap()
@@ -42,6 +42,7 @@ class FancyTabBar extends StatelessWidget {
                     i,
                     Expanded(
                       child: GestureDetector(
+                        behavior: HitTestBehavior.translucent,
                         onTap: () => onItemSelected(i),
                         child: FancyTab(
                           item: item,

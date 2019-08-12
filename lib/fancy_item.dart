@@ -66,7 +66,7 @@ class _FancyItemState extends State<FancyItem> with TickerProviderStateMixin {
               child: Center(
                 child: TapRing(
                   isSelected: widget.selected,
-                  color: widget.selectedColor ?? Colors.blue,
+                  color: widget.selectedColor ?? Theme.of(context).accentColor,
                 ),
               ),
             )

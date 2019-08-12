@@ -3,13 +3,13 @@
 A different take on your standard bottom app bar. 
 Inspired by https://dribbble.com/shots/6957731-Reader-app-tab-bar
 
-# FancyBottomNavigation
+# FancyBottomBar
 
 ![Demo Gif](https://github.com/cuberob/fancy_bottom_bar/blob/master/demo.gif "Demo")
 
 ## Getting Started
 
-Add the plugin (pub coming soon):
+Add the plugin:
 
 ```yaml
 dependencies:

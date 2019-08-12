@@ -17,9 +17,6 @@ class FancyTab extends StatefulWidget {
 class _FancyTabState extends State<FancyTab> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    final titleText = Text(
-      widget.item.title,
-    );
     final selectedIndicator = Container(
       width: 4,
       height: 4,
@@ -32,13 +29,12 @@ class _FancyTabState extends State<FancyTab> with TickerProviderStateMixin {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Spacer(flex: 4),
-        titleText,
+        widget.item.title,
         Spacer(flex: 2),
         selectedIndicator,
         Spacer(flex: 1),
       ],
     );
-    var icon = Icon(widget.item.icon);
 
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -53,7 +49,7 @@ class _FancyTabState extends State<FancyTab> with TickerProviderStateMixin {
               bottom: widget.selected ? 0 : -200,
             ),
             AnimatedPositioned(
-              child: icon,
+              child: widget.item.icon,
               duration: ANIM_DURATION,
               top: widget.selected ? -200 : 0,
               bottom: widget.selected ? 0 : 0,

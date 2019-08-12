@@ -1,4 +1,4 @@
-# fancy_tab
+# fancy_bottom_bar
 
 A different take on your standard tab bar.
 

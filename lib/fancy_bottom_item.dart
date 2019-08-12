@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
 
-class FancyTabItem {
+class FancyBottomItem {
   final Widget title;
   final Widget icon;
 
-  const FancyTabItem({this.title, this.icon})
+  const FancyBottomItem({this.title, this.icon})
       : assert(title != null),
         assert(icon != null);
 }

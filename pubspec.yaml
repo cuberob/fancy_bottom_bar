@@ -1,7 +1,7 @@
-name: fancy_tab
-description: A different take on your standard tab bar. Loosely inspired by \https://dribbble.com/shots/6957731-Reader-app-tab-bar
+name: fancy_bottom_bar
+description: A different take on your standard bottom app bar. Loosely inspired by \https://dribbble.com/shots/6957731-Reader-app-tab-bar
 version: 0.0.1
-author: Cuberob
+author: Rob de Knegt
 homepage: https://www.cuberob.com/indie/
 
 environment:

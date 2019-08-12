@@ -1,20 +1,20 @@
-import 'package:fancy_tab/fancy_tab_item.dart';
-import 'package:fancy_tab/tap_ring.dart';
+import 'package:fancy_bottom_bar/fancy_bottom_item.dart';
+import 'package:fancy_bottom_bar/tap_ring.dart';
 import 'package:flutter/material.dart';
 
 const Duration ANIM_DURATION = const Duration(milliseconds: 400);
 
-class FancyTab extends StatefulWidget {
-  final FancyTabItem item;
+class FancyItem extends StatefulWidget {
+  final FancyBottomItem item;
   final bool selected;
 
-  FancyTab({this.item, this.selected});
+  FancyItem({this.item, this.selected});
 
   @override
-  _FancyTabState createState() => _FancyTabState();
+  _FancyItemState createState() => _FancyItemState();
 }
 
-class _FancyTabState extends State<FancyTab> with TickerProviderStateMixin {
+class _FancyItemState extends State<FancyItem> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final selectedIndicator = Container(
@@ -70,7 +70,7 @@ class _FancyTabState extends State<FancyTab> with TickerProviderStateMixin {
   }
 
   @override
-  void didUpdateWidget(FancyTab oldWidget) {
+  void didUpdateWidget(FancyItem oldWidget) {
     if (oldWidget.selected != widget.selected) {
       if (widget.selected) {
         print("Show pulse animation?");

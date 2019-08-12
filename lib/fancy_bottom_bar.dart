@@ -1,22 +1,22 @@
-library fancy_tab;
+library fancy_bottom_bar;
 
-import 'package:fancy_tab/fancy_tab.dart';
-import 'package:fancy_tab/fancy_tab_item.dart';
+import 'package:fancy_bottom_bar/fancy_bottom_item.dart';
+import 'package:fancy_bottom_bar/fancy_item.dart';
 import 'package:flutter/material.dart';
 
-export 'fancy_tab.dart';
-export 'fancy_tab_item.dart';
+export 'fancy_bottom_item.dart';
+export 'fancy_bottom_bar.dart';
 
-class FancyTabBar extends StatelessWidget {
+class FancyBottomBar extends StatelessWidget {
   final ValueChanged<int> onItemSelected;
   final int selectedPosition;
-  final List<FancyTabItem> items;
+  final List<FancyBottomItem> items;
   final Color bgColor;
   final Color indicatorColor;
   final Color iconColor;
   final Color textColor;
 
-  FancyTabBar({
+  FancyBottomBar({
     this.onItemSelected,
     this.selectedPosition,
     this.items,
@@ -44,7 +44,7 @@ class FancyTabBar extends StatelessWidget {
                       child: GestureDetector(
                         behavior: HitTestBehavior.translucent,
                         onTap: () => onItemSelected(i),
-                        child: FancyTab(
+                        child: FancyItem(
                           item: item,
                           selected: i == selectedPosition,
                         ),

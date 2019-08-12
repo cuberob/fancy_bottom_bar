@@ -37,6 +37,8 @@ bottomNavigationBar: FancyBottomBar(
 **onItemSelected** -> Function to handle a tap selection change, receives an `int`<br/>
 **selectedPosition** -> The currently selected position<br/>
 ### optional
+**height** -> The height of the `FancyBottomBar`, defaults to 64<br/>
+**elevation** -> The elevation for the `FancyBottomBar`, defaults to 8<br/>
 **bgColor** -> The bottom app bar's background color, defaults to  the`Theme`'s `bottomAppBarColor`<br/>
 **indicatorColor** -> The tiny circle indicator color, defaults to `Colors.black`<br/>
 **selectedColor** -> The pulsing circle's color, defaults to  the`Theme`'s `accentColor`<br/>

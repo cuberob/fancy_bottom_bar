@@ -2,6 +2,10 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+const double STROKE_WIDTH = 6;
+const double TAP_INDICATOR_SIZE = 32;
+const Duration TAP_ANIMATION_DURATION = const Duration(milliseconds: 300);
+
 class TapRing extends StatefulWidget {
   final double strokeWidth;
   final double size;
@@ -11,8 +15,8 @@ class TapRing extends StatefulWidget {
   const TapRing(
       {this.isSelected,
       this.color,
-      this.strokeWidth = 6,
-      this.size = 32,
+      this.strokeWidth = STROKE_WIDTH,
+      this.size = TAP_INDICATOR_SIZE,
       Key key})
       : super(key: key);
 
@@ -28,7 +32,7 @@ class _TapRingState extends State<TapRing> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
     controller = AnimationController(
-      duration: const Duration(milliseconds: 300),
+      duration: TAP_ANIMATION_DURATION,
       vsync: this,
     );
     _animation = Tween(begin: 0.0, end: 1.0).animate(controller);

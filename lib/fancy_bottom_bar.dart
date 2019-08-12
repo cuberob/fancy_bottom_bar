@@ -4,13 +4,18 @@ import 'package:fancy_bottom_bar/fancy_bottom_item.dart';
 import 'package:fancy_bottom_bar/fancy_item.dart';
 import 'package:flutter/material.dart';
 
-export 'fancy_bottom_item.dart';
 export 'fancy_bottom_bar.dart';
+export 'fancy_bottom_item.dart';
+
+const double DEFAULT_BOTTOM_APP_BAR_HEIGHT = 64;
+const double DEFAULT_ELEVATION = 8;
 
 class FancyBottomBar extends StatelessWidget {
   final ValueChanged<int> onItemSelected;
   final int selectedPosition;
   final List<FancyBottomItem> items;
+  final double height;
+  final double elevation;
   final Color bgColor;
   final Color indicatorColor;
   final Color selectedColor;
@@ -19,6 +24,8 @@ class FancyBottomBar extends StatelessWidget {
     this.onItemSelected,
     this.selectedPosition,
     this.items,
+    this.height,
+    this.elevation,
     this.bgColor,
     this.indicatorColor,
     this.selectedColor,
@@ -29,7 +36,7 @@ class FancyBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      elevation: 8,
+      elevation: elevation ?? DEFAULT_ELEVATION,
       color: bgColor ?? Theme.of(context).bottomAppBarColor,
       child: SafeArea(
         child: SizedBox(
@@ -53,7 +60,7 @@ class FancyBottomBar extends StatelessWidget {
                 .values
                 .toList(),
           ),
-          height: 64,
+          height: height ?? DEFAULT_BOTTOM_APP_BAR_HEIGHT,
         ),
       ),
     );

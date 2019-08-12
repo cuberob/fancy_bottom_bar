@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 const Duration ANIM_DURATION = const Duration(milliseconds: 400);
 const double ANIM_Y_OFFSET = -200;
+const double SELECTION_INDICATOR_SIZE = 4;
 
 class FancyItem extends StatefulWidget {
   final FancyBottomItem item;
@@ -26,8 +27,8 @@ class _FancyItemState extends State<FancyItem> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final selectedIndicator = Container(
-      width: 4,
-      height: 4,
+      width: SELECTION_INDICATOR_SIZE,
+      height: SELECTION_INDICATOR_SIZE,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: widget.indicatorColor ?? Colors.black,

@@ -3,6 +3,7 @@ import 'package:fancy_bottom_bar/tap_ring.dart';
 import 'package:flutter/material.dart';
 
 const Duration ANIM_DURATION = const Duration(milliseconds: 400);
+const double ANIM_Y_OFFSET = -200;
 
 class FancyItem extends StatefulWidget {
   final FancyBottomItem item;
@@ -52,14 +53,14 @@ class _FancyItemState extends State<FancyItem> with TickerProviderStateMixin {
             AnimatedPositioned(
               child: title,
               duration: ANIM_DURATION,
-              top: widget.selected ? 0 : 0,
-              bottom: widget.selected ? 0 : -200,
+              top: 0,
+              bottom: widget.selected ? 0 : ANIM_Y_OFFSET,
             ),
             AnimatedPositioned(
               child: widget.item.icon,
               duration: ANIM_DURATION,
-              top: widget.selected ? -200 : 0,
-              bottom: widget.selected ? 0 : 0,
+              top: widget.selected ? ANIM_Y_OFFSET : 0,
+              bottom: 0,
             ),
             Positioned.fill(
               child: Center(
@@ -73,15 +74,5 @@ class _FancyItemState extends State<FancyItem> with TickerProviderStateMixin {
         );
       },
     );
-  }
-
-  @override
-  void didUpdateWidget(FancyItem oldWidget) {
-    if (oldWidget.selected != widget.selected) {
-      if (widget.selected) {
-        print("Show pulse animation?");
-      }
-    }
-    super.didUpdateWidget(oldWidget);
   }
 }

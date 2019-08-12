@@ -1,6 +1,7 @@
 # fancy_bottom_bar
 
-A different take on your standard tab bar.
+A different take on your standard bottom app bar. 
+Inspired by https://dribbble.com/shots/6957731-Reader-app-tab-bar
 
 ## Getting Started
 

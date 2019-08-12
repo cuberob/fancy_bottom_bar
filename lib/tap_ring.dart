@@ -6,8 +6,14 @@ class TapRing extends StatefulWidget {
   final double strokeWidth;
   final double size;
   final Color color;
+  final bool isSelected;
 
-  const TapRing({this.color, this.strokeWidth = 6, this.size = 32, Key key})
+  const TapRing(
+      {this.isSelected,
+      this.color,
+      this.strokeWidth = 6,
+      this.size = 32,
+      Key key})
       : super(key: key);
 
   @override
@@ -26,7 +32,6 @@ class _TapRingState extends State<TapRing> with SingleTickerProviderStateMixin {
       vsync: this,
     );
     _animation = Tween(begin: 0.0, end: 1.0).animate(controller);
-    controller.forward();
   }
 
   @override
@@ -58,6 +63,12 @@ class _TapRingState extends State<TapRing> with SingleTickerProviderStateMixin {
         );
       },
     );
+  }
+
+  @override
+  void didUpdateWidget(TapRing oldWidget) {
+    if (!oldWidget.isSelected && widget.isSelected) controller.forward(from: 0);
+    super.didUpdateWidget(oldWidget);
   }
 }
 

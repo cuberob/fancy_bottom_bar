@@ -13,8 +13,7 @@ class FancyBottomBar extends StatelessWidget {
   final List<FancyBottomItem> items;
   final Color bgColor;
   final Color indicatorColor;
-  final Color iconColor;
-  final Color textColor;
+  final Color selectedColor;
 
   FancyBottomBar({
     this.onItemSelected,
@@ -22,8 +21,7 @@ class FancyBottomBar extends StatelessWidget {
     this.items,
     this.bgColor,
     this.indicatorColor,
-    this.iconColor,
-    this.textColor,
+    this.selectedColor,
   })  : assert(items.isNotEmpty),
         assert(selectedPosition != null),
         assert(selectedPosition >= 0 && selectedPosition < items.length);
@@ -47,6 +45,8 @@ class FancyBottomBar extends StatelessWidget {
                         child: FancyItem(
                           item: item,
                           selected: i == selectedPosition,
+                          indicatorColor: indicatorColor,
+                          selectedColor: selectedColor,
                         ),
                       ),
                     )))

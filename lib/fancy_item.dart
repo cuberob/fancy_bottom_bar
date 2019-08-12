@@ -7,8 +7,15 @@ const Duration ANIM_DURATION = const Duration(milliseconds: 400);
 class FancyItem extends StatefulWidget {
   final FancyBottomItem item;
   final bool selected;
+  final Color indicatorColor;
+  final Color selectedColor;
 
-  FancyItem({this.item, this.selected});
+  FancyItem({
+    this.item,
+    this.selected,
+    this.indicatorColor,
+    this.selectedColor,
+  });
 
   @override
   _FancyItemState createState() => _FancyItemState();
@@ -22,7 +29,7 @@ class _FancyItemState extends State<FancyItem> with TickerProviderStateMixin {
       height: 4,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.black,
+        color: widget.indicatorColor ?? Colors.black,
       ),
     );
     final title = Column(
@@ -56,11 +63,10 @@ class _FancyItemState extends State<FancyItem> with TickerProviderStateMixin {
             ),
             Positioned.fill(
               child: Center(
-                child: widget.selected
-                    ? TapRing(
-                        color: Colors.blue,
-                      )
-                    : Container(),
+                child: TapRing(
+                  isSelected: widget.selected,
+                  color: widget.selectedColor ?? Colors.blue,
+                ),
               ),
             )
           ],
